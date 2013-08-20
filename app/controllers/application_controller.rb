@@ -4,8 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def authenticate!
-    store_previous_url!
-    redirect_to "/auth/twitter" unless current_user
+    unless current_user
+      store_previous_url!
+      redirect_to "/auth/twitter"
+    end
   end
 
   def authenticate_admin!
@@ -19,18 +21,24 @@ class ApplicationController < ActionController::Base
   end
 
   def voting_open?
-    Time.current < Vote::CLOSES
+    Time.current > Vote::OPENS
   end
+
+  def voting_closed?
+    Time.current > Vote::CLOSES
+  end
+
   helper_method :voting_open?
+  helper_method :voting_closed?
 
 private
 
   def store_previous_url!
-    session[:return_to] ||= request.referer
+    session[:return_to] = request.referer
   end
 
   def next_url
-    session[:return_to] ? session.delete(:return_to) : root_url
+    session[:return_to].present? ? session.delete(:return_to) : root_url
   end
 
   def current_user

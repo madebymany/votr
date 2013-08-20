@@ -1,14 +1,19 @@
 <h1>Speaking Proposals</h1>
 
-<% if voting_open? %>
-  <p>Please read the proposals carefully and vote for the proposals that you
-     wish to hear on the Front-end London One Day event.</p>
+<p>This application allows you to vote for the speakers that you want to hear at the Front-end London One Day event. There are 8 speaker slots for the day and you get one vote per slot.</p>
 
-  <p>You get <strong><%= Vote::MAX_VOTES %> votes</strong> in total.
-     Please use them wisely!</p>
+<% if !voting_open? %>
+  <p><strong>Voting will open on the 27th August</strong>.</p>
+
+<% elsif voting_open? %>
+
+  <p><strong>Voting is now open and will close on the 13th September</strong>.</p>
+
 <% else %>
   <p>Voting for proposals has now ended. The following proposals will be
      delivered on the Front-end London One Day event.</p>
 <% end %>
+
+<%= link_to "Your votes", votes_proposals_path, class: "red" if current_user %>
 
 <%= render @proposals %>

@@ -4,7 +4,7 @@ class ProposalsController < ApplicationController
   before_filter :authenticate!, only: [:votes]
 
   def index
-    @proposals = Proposal.all
+    @proposals = Proposal.all.order('RANDOM()')
   end
 
   def show

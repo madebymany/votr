@@ -4,10 +4,12 @@ class Vote < ActiveRecord::Base
 
   validate :can_be_voted_for?,
            :not_already_voted,
-           :within_vote_window?
+           :voting_open?,
+           :voting_not_closed?
 
   MAX_VOTES = 8
-  CLOSES = Time.parse("Fri Aug 30 11:59:59 GMT 2013")
+  OPENS = Time.parse("Tue Aug 27 00:00:59 GMT 2013")
+  CLOSES = Time.parse("Fri Sep 13 11:59:59 GMT 2013")
 
 private
 
@@ -19,8 +21,12 @@ private
     errors.add :base, "You cannot vote for a proposal more than once" if user.voted?(proposal)
   end
 
-  def within_vote_window?
+  def voting_not_closed?
     errors.add :base, "The voting window has now closed" if Time.current > CLOSES
+  end
+
+  def voting_open?
+    errors.add :base, "The voting window is not open yet" if Time.current < OPENS
   end
 
 end

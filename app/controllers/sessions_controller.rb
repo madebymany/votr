@@ -1,8 +1,6 @@
 class SessionsController < ApplicationController
 
   def create
-    store_previous_url!
-
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
     redirect_to next_url, notice: "Signed in!"

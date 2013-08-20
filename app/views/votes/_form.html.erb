@@ -3,17 +3,23 @@
   <%= render "form_errors", obj: vote %>
 
   <%
-  text = @has_voted ?  "You have already voted" : "Vote for this proposal"
+  text =
+    if !voting_open?
+      "Voting is not yet open"
+    elsif voting_open? && !@has_voted
+      "Vote for this proposal"
+    else
+      "You have already voted"
+    end
+
   options = { class: "button" }
-  options[:disabled] = true if @has_voted
+  options[:disabled] = true if @has_voted || !voting_open?
   %>
 
   <%= f.submit text, options %>
 
-  <p class="vote-count">This proposal currently has <%= pluralize proposal.votes.size, "vote" %>.</p>
-
   <% unless current_user %>
-    <p class="sub-text">You must sign in via Twitter in order to vote for this proposal. We only use your Twitter account to verify your identity, we will never tweet from it. Promise.</p>
+    <p class="sub-text">You must sign in via Twitter in order to vote for this proposal. We only use your Twitter account to verify your identity.</p>
   <% else %>
     <p class="sub-text">You have <strong><%= pluralize current_user.votes_remaining, "vote" %></strong> remaining.</p>
   <% end %>
