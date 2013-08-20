@@ -1,0 +1,35 @@
+$hipster-red: #da5757;
+
+.button {
+  background: #fff;
+  border: 3px solid $hipster-red;
+  padding: 1em 2em;
+  color: $hipster-red;
+  font-size: 1.2em;
+  font-family: inherit;
+  margin: 1em 0;
+}
+
+.button:hover {
+  color: #fff;
+  background-color: $hipster-red;
+}
+
+.button:disabled {
+  color: $hipster-red;
+  background: #fff;
+  border-color: $hipster-red;
+}
+
+.button[type=submit] {
+  color: $hipster-red;
+}
+
+.button[type=submit]:hover {
+  color: #fff;
+}
+
+.button[type=submit]:disabled {
+  border-color: #a7a7a7;
+  color: #a7a7a7;
+}

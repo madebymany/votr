@@ -1,0 +1,9 @@
+<div class="proposal">
+  <h2 class="proposal__title"><%= link_to proposal.title, proposal %></h2>
+  <span class="proposal__votes"><%= pluralize proposal.votes.size, "vote" %></span>
+
+  <nav class="proposal__actions">
+    <%= link_to "Edit", edit_admin_proposal_path(proposal) %>
+    <%= link_to "Show", admin_proposal_path(proposal) %>
+  </nav>
+</div>

@@ -1,0 +1,20 @@
+.proposal {
+  border-top: 1px solid #ccc;
+  margin: 2em 0 0 0;
+  padding: 2em 0 0 0;
+}
+
+.proposal__title {
+  color: $hipster-red;
+  margin: 0 0 .3em;
+}
+
+.proposal__title a {
+  color: $hipster-red;
+  text-decoration: none;
+  border-bottom: 2px solid $hipster-red;
+}
+
+.proposal__votes {
+  color: #a7a7a7;
+}

@@ -1,0 +1,7 @@
+<h1><%= resource.title %></h1>
+<%= simple_format resource.body %>
+
+<nav class="proposal__actions">
+  <%= link_to "Edit", edit_admin_proposal_path(resource) %>
+  <%= link_to "All proposals", admin_proposals_path %>
+</nav>

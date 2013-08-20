@@ -1,0 +1,20 @@
+<%= form_for [:admin, proposal]  do |f| %>
+
+  <%= render "form_errors", obj: proposal %>
+
+  <div class="field">
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+  <%= f.submit "Save" %>
+
+  <%= link_to "Cancel", admin_proposals_path %>
+<% end %>

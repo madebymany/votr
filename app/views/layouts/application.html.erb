@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Votr</title>
+  <%= stylesheet_link_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= render "layouts/header" %>
+  <div class="container main">
+    <%= yield %>
+  </div>
+  <%= render "layouts/footer" %>
+
+<%= javascript_include_tag "application" %>
+</body>
+</html>

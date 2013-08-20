@@ -1,0 +1,19 @@
+.field input,
+.field textarea {
+  padding: 8px;
+  width: 100%;
+}
+
+.field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+.field textarea {
+  height: 300px;
+}
+
+.field {
+  margin: 2em 0;
+}

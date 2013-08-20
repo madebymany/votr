@@ -1,0 +1,5 @@
+<h1>Your votes</h1>
+
+<% @votes.each do |vote| %>
+  <%= render vote.proposal %>
+<% end %>
