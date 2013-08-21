@@ -1,29 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Front-end London | One Day | Proposal Voting</title>
-  <%= stylesheet_link_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width">
 
-  <%= render "layouts/header" %>
-  <div class="container main">
-    <%= yield %>
-  </div>
-  <%= render "layouts/footer" %>
+    <title>Front-end London | One Day | Proposal Voting</title>
+    <%= stylesheet_link_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-  <%= javascript_include_tag "application" %>
+    <%= render "layouts/header" %>
+    <div class="container main">
+      <%= yield %>
+    </div>
+    <%= render "layouts/footer" %>
 
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <%= javascript_include_tag "application" %>
 
-    ga('create', 'UA-37222208-2', 'fel-one-day-votr.herokuapp.com');
-    ga('send', 'pageview');
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  </script>
-</body>
+      ga('create', 'UA-37222208-2', 'fel-one-day-votr.herokuapp.com');
+      ga('send', 'pageview');
+
+    </script>
+  </body>
 </html>

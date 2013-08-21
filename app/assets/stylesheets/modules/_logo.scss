@@ -8,6 +8,10 @@
   &:visited {
     color: #fff;
   }
+
+  @include breakpoint($breakpoint-small) {
+    font-size: 2em;
+  }
 }
 
 .site-logo .inner {
