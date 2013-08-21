@@ -1,4 +1,4 @@
-<%= form_for vote, url: proposal_votes_path(proposal) do |f| %>
+<%= form_for vote, url: proposal_votes_path(proposal), html: { class: "padded" } do |f| %>
 
   <%= render "form_errors", obj: vote %>
 
