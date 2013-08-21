@@ -5,6 +5,7 @@
 
   <% if !voting_open? %>
     <p><strong>Voting will open on the 27th August</strong>.</p>
+    <p>If you'd like to propose a talk, please <%= mail_to "frontendlondon@madebymany.co.uk", "get in touch with us", class: "red" %>.</p>
 
   <% elsif voting_open? %>
 
