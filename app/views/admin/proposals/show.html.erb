@@ -1,5 +1,10 @@
-<h1><%= resource.title %></h1>
-<%= simple_format resource.body %>
+<div class="padded proposal--full">
+  <h1 class="red"><%= proposal.title %></h1>
+
+  <div class="proposal__entry">
+    <%= simple_format proposal.body %>
+  </div>
+</div>
 
 <nav class="proposal__actions">
   <%= link_to "Edit", edit_admin_proposal_path(resource) %>

@@ -1,7 +1,7 @@
 .proposal {
   border-top: 1px solid #ccc;
   margin: 2em 0 0 0;
-  padding: 2em 2% 0;
+  padding: 2em 1em 0;
 }
 
 .proposal__title {
@@ -18,4 +18,15 @@
 
 .proposal__votes {
   color: #a7a7a7;
+}
+
+.proposal__entry {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.proposal__entry p {
+  line-height: 1.4;
+  margin-bottom: 1.5em;
 }
