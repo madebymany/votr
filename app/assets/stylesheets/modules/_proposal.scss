@@ -16,6 +16,11 @@
   border-bottom: 2px solid $hipster-red;
 }
 
+.proposal--voted .proposal__title a {
+  color: #A7A7A7;
+  border-bottom-color: #A7A7A7;
+}
+
 .proposal__votes {
   color: #a7a7a7;
 }

@@ -1,3 +1,3 @@
-<div class="proposal">
+<div class="proposal <%= "proposal--voted" if current_user && current_user.voted?(proposal) %>">
   <h2 class="proposal__title"><%= link_to proposal.title, proposal %></h2>
 </div>
