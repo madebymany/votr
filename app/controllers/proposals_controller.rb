@@ -1,15 +1,19 @@
 class ProposalsController < ApplicationController
 
   before_filter :fetch_proposal, only: [:show]
+  before_filter :fetch_proposals, only: [:index]
   before_filter :authenticate!, only: [:votes]
 
   def index
-    @proposals = Proposal.all.order('RANDOM()')
   end
 
   def show
     @has_voted = current_user && current_user.voted?(@proposal)
     @vote = Vote.new
+  end
+
+  def all
+    @proposals = Proposal.all
   end
 
   def votes
@@ -20,6 +24,15 @@ private
 
   def fetch_proposal
     @proposal = Proposal.find(params[:id]) or not_found
+  end
+
+  def fetch_proposals
+    @proposals =
+      if voting_closed?
+        Proposal.top_with_vote_count
+      else
+        Proposal.all.order('RANDOM()')
+      end
   end
 
 end

@@ -28,6 +28,10 @@ class Admin::ProposalsController < ApplicationController
 
 private
 
+  def collection
+    @proposals ||= end_of_association_chain.all_with_vote_count
+  end
+
   def params_for_create
     params.require(:proposal).permit(:title, :author, :body)
   end
