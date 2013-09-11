@@ -21,6 +21,10 @@
   border-bottom-color: #A7A7A7;
 }
 
+.proposal--closed .proposal__title a {
+  opacity: .5;
+}
+
 .proposal__votes {
   color: #a7a7a7;
 }

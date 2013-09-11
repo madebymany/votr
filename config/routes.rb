@@ -9,13 +9,15 @@ Votr::Application.routes.draw do
       get "votes"
       get "all"
     end
-
     resources :votes, only: [:create]
   end
 
   namespace :admin do
     get "", to: redirect("/admin/proposals")
-    resources :proposals
+    resources :proposals do
+      post "close"
+      post "open"
+    end
   end
 
   root to: redirect("/proposals")

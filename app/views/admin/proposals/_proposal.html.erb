@@ -5,5 +5,11 @@
   <nav class="proposal__actions">
     <%= link_to "Edit", edit_admin_proposal_path(proposal) %>
     <%= link_to "Show", admin_proposal_path(proposal) %>
+
+    <% unless proposal.closed? %>
+      <%= link_to "Close", admin_proposal_close_path(proposal), method: :post, confirm: "Closing will destroy all votes. Dat cool?" %>
+    <% else %>
+      <%= link_to "Open", admin_proposal_open_path(proposal), method: :post %>
+    <% end %>
   </nav>
 </div>

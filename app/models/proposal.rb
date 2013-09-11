@@ -30,4 +30,9 @@ class Proposal < ActiveRecord::Base
     save!(validate: false)
   end
 
+  def mark_as_open!
+    self.closed_at = nil
+    save!(validate: false)
+  end
+
 end

@@ -26,6 +26,16 @@ class Admin::ProposalsController < ApplicationController
   def show
   end
 
+  def close
+    Proposal.find(params[:proposal_id]).mark_as_closed!
+    redirect_to admin_proposals_path
+  end
+
+  def open
+    Proposal.find(params[:proposal_id]).mark_as_open!
+    redirect_to admin_proposals_path
+  end
+
 private
 
   def collection

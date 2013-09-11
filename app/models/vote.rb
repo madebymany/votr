@@ -15,6 +15,7 @@ private
 
   def can_be_voted_for?
     errors.add :base, "You cannot vote for more than #{MAX_VOTES} proposals" unless user.can_vote?
+    errors.add :base, "This proposal cannot be voted for" if proposal.closed?
   end
 
   def not_already_voted
