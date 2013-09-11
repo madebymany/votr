@@ -6,6 +6,8 @@
   text =
     if !voting_open?
       "Voting is not yet open"
+    elsif proposal.closed?
+      "Proposal has been withdrawn"
     elsif voting_open? && !@has_voted
       "Vote for this proposal"
     else
@@ -13,7 +15,7 @@
     end
 
   options = { class: "button" }
-  options[:disabled] = true if @has_voted || !voting_open?
+  options[:disabled] = true if proposal.closed? || @has_voted || !voting_open?
   %>
 
   <%= f.submit text, options %>

@@ -1,7 +1,14 @@
-<div class="proposal <%= "proposal--voted" if current_user && current_user.voted?(proposal) %>">
-  <h2 class="proposal__title"><%= link_to proposal.title, proposal %></h2>
+<%
+classes = []
+classes << "proposal"
+classes << "proposal--voted" if current_user && current_user.voted?(proposal)
+classes << "proposal--closed" if proposal.closed?
+%>
+
+<div class="<%= classes.join(' ') %>">
+  <h2 class="proposal__title"><%= link_to(proposal.title, proposal) %></h2>
 
   <% if voting_closed? %>
-    <span class="proposal__votes"><%= pluralize proposal.votes_count, "vote" %> | <%= proposal.author %></span>
+    <span class="proposal__votes"><%= proposal.author %></span>
   <% end %>
 </div>

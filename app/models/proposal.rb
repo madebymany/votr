@@ -1,5 +1,5 @@
 class Proposal < ActiveRecord::Base
-  has_many :votes
+  has_many :votes, dependent: :destroy
 
   validates :title, presence: true
   validates :author, presence: true
@@ -18,6 +18,16 @@ class Proposal < ActiveRecord::Base
 
   def votes_count
     respond_to?(:votes_size) ? votes_size : votes.size
+  end
+
+  def closed?
+    closed_at.present?
+  end
+
+  def mark_as_closed!
+    votes.destroy_all
+    self.closed_at = Time.current
+    save!(validate: false)
   end
 
 end
