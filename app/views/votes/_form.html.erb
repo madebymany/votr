@@ -8,6 +8,8 @@
       "Voting is not yet open"
     elsif proposal.closed?
       "Proposal has been withdrawn"
+    elsif !voting_open?
+      "Voting is now closed"
     elsif voting_open? && !@has_voted
       "Vote for this proposal"
     else
