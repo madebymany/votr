@@ -9,7 +9,7 @@ class Vote < ActiveRecord::Base
 
   MAX_VOTES = 8
   OPENS = Time.parse("Tue Aug 27 00:00:59 GMT 2013")
-  CLOSES = Time.parse("Fri Sep 13 11:59:59 GMT 2013")
+  CLOSES = Time.parse("Fri Sep 13 10:59:59 GMT 2013")
 
 private
 
