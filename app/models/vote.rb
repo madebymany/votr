@@ -8,8 +8,8 @@ class Vote < ActiveRecord::Base
            :voting_not_closed?
 
   MAX_VOTES = 8
-  OPENS = Time.parse("Tue Aug 27 00:00:59 GMT 2013")
-  CLOSES = Time.parse("Fri Sep 13 10:59:59 GMT 2013")
+  OPENS = Time.parse("Thu Aug 29 00:00:59 GMT 2014")
+  CLOSES = Time.parse("Thu Sep 11 10:59:59 GMT 2014")
 
 private
 
@@ -23,11 +23,11 @@ private
   end
 
   def voting_not_closed?
-    errors.add :base, "The voting window has now closed" if Time.current > CLOSES
+    errors.add :base, "The voting window has now closed" if Time.zone.now > CLOSES
   end
 
   def voting_open?
-    errors.add :base, "The voting window is not open yet" if Time.current < OPENS
+    errors.add :base, "The voting window is not open yet" if Time.zone.now < OPENS
   end
 
 end

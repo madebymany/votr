@@ -15,7 +15,7 @@ class VotesController < ApplicationController
 private
 
   def fetch_current_proposal
-    @proposal = Proposal.find params[:proposal_id] || not_found
+    @proposal = Proposal.recent.find params[:proposal_id] || not_found
   end
 
   def params_for_create

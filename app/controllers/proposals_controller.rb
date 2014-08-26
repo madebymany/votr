@@ -13,7 +13,7 @@ class ProposalsController < ApplicationController
   end
 
   def all
-    @proposals = Proposal.all
+    @proposals = Proposal.recent
   end
 
   def votes
@@ -23,7 +23,7 @@ class ProposalsController < ApplicationController
 private
 
   def fetch_proposal
-    @proposal = Proposal.find(params[:id]) or not_found
+    @proposal = Proposal.recent.find(params[:id]) or not_found
   end
 
   def fetch_proposals
@@ -31,7 +31,7 @@ private
       if voting_closed?
         Proposal.top_with_vote_count
       else
-        Proposal.all.order('RANDOM()')
+        Proposal.recent.order('RANDOM()')
       end
   end
 
