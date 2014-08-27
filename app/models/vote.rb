@@ -8,7 +8,7 @@ class Vote < ActiveRecord::Base
            :voting_not_closed?
 
   MAX_VOTES = 8
-  OPENS = Time.parse("Thu Aug 29 00:00:59 GMT 2014")
+  OPENS = Time.parse("Thu Aug 28 19:00:00 GMT 2014")
   CLOSES = Time.parse("Thu Sep 11 10:59:59 GMT 2014")
 
 private
