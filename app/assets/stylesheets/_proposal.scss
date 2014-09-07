@@ -1,0 +1,45 @@
+.proposal {
+  @extend %media-box;
+  @extend %section;
+}
+
+.proposal__aside-left {
+  @extend %media-box__aside-left;
+  @extend %section__aside-left;
+}
+
+.proposal__content {
+  @extend %media-box__content;
+}
+
+.proposal__title {
+  background:#8e71f2;
+  font-family:'nanamimedium', sans-serif;
+  font-size:em(32pt);
+  line-height:em(48pt, 32pt);
+  padding:em(6px, 32pt) 0;
+  text-transform:uppercase;
+  display:inline;
+  vertical-align:middle;
+  box-shadow: em(10pt, 32pt) 0 0 #8e71f2, em(-10pt, 32pt) 0 0 #8e71f2;
+  position:relative;
+  left:em(10pt, 32pt);
+  font-weight:normal;
+}
+
+.proposal__title a {
+  @extend %unstyled-anchor;
+  color:#fff;
+}
+
+.proposal__author {
+  @extend .body-copy;
+  color:#8e75ef;
+  display:block;
+  font-style:normal;
+  margin-top:20px;
+}
+
+.proposal__header {
+  margin-bottom:47px;
+}

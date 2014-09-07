@@ -1,4 +1,4 @@
-<%= form_for vote, url: proposal_votes_path(proposal), html: { class: "padded" } do |f| %>
+<%= form_for vote, url: proposal_votes_path(proposal), html: { class: "vote-form" } do |f| %>
 
   <%= render "form_errors", obj: vote %>
 
@@ -23,8 +23,8 @@
   <%= f.submit text, options %>
 
   <% unless current_user %>
-    <p class="sub-text">You must sign in via Twitter in order to vote for this proposal. We only use your Twitter account to verify your identity.</p>
+    <p class="body-copy">You must sign in via Twitter in order to vote for this proposal. We only use your Twitter account to manage your vote count. We'll never tweet on your behalf</p>
   <% else %>
-    <p class="sub-text">You have <strong><%= pluralize current_user.votes_remaining, "vote" %></strong> remaining.</p>
+    <p class="body-copy">You have <strong><%= pluralize current_user.votes_remaining, "vote" %></strong> remaining.</p>
   <% end %>
 <% end %>

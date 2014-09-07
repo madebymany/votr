@@ -1,0 +1,91 @@
+<% content_for :header do %>
+  <h2 class="site-header__subtitle">
+    A day long conference about all aspects of front-end design and development.<br />
+    <a href="http://frontendlondon.co.uk" class="site-header__fel-link">
+      From the team that brings you Front-end London.
+    </a>
+  </h2>
+  <hr class="seperator" />
+  <p class="site-header_details">October 4th 2014 // Sadler’s Wells, Islington, London</p>
+<% end %>
+
+<section class="site-width">
+  <div class="about">
+    <div class="about__aside-left">
+      <h2 class="section-heading">About</h2>
+      <hr class="seperator" />
+    </div>
+    <div class="about__content">
+      <p class="body-copy">EPIC FEL (formerly FEL One Day) is a the larger, day-long version of the free monthly meet-up hosted by Made by Many. Get ready for a full day of cutting-edge, insightful talks about all aspects of front-end design and development.</p>
+      <p class="body-copy">We’re inviting the front-end community to join us at the Lilian Baylis Studio at Saddler's Well Theatre on Saturday the 4th of October.</p>
+      <p class="body-copy">Tickets will be released on the 13th of October and will cost only £25</p>
+      <p class="body-copy">Epic FEL is an affordable community focused event that will feature speakers chosen by you. <!--<a href="">Find out more</a>--></p>
+    </div>
+  </div>
+</section>
+<section class="speakers">
+  <div class="site-width">
+  </div>
+</section>
+<section class="site-width">
+  <div class="location">
+    <div class="location__container">
+      <div class="location__aside-left">
+        <h2 class="section-heading">Location</h2>
+        <hr class="seperator" />
+      </div>
+      <div class="location__content">
+        <p class="body-copy">
+          <a href="http://www.sadlerswells.com/">Sadler's Wells Theatre</a>
+        </p>
+        <p class="body-copy">Lilian Baylis Studio, Rosebery Ave, London EC1R 4TN</p>
+      </div>
+    </div>
+    <div class="location__map-container">
+      <div class="location__map" id="map">
+        <%#<img class="location__map" src="http://maps.googleapis.com/maps/api/staticmap?center=Sadler's+Wells+Theatre&zoom=13&size=516x290&scale=2&maptype=roadmap%>
+        <%#&markers=color:0x6856b5%7Clabel:S%7C51.529258,-0.106338&%>
+        <%#style=feature:landscape|saturation:-100|lightness:65|visibility:on&style=feature:poi|saturation:-100|lightness:51|visibility:simplified%>
+        <%#&style=feature:road.highway|saturation:-100|visibility:simplified%>
+        <%#&style=feature:road.arterial|saturation:-100|lightness:30|visibility:on%>
+        <%#&style=feature:road.local|saturation:-100|lightness:40|visibility:on%>
+        <%#&style=feature:transit|saturation:-100|visibility:simplified%>
+        <%#&style=feature:administrative.province|visibility:off%>
+        <%#&style=feature:administrative.locality|visibility:off%>
+        <%#&style=feature:administrative.neighborhood|visibility:on%>
+        <%#&style=feature:water|element:labels|visibility:on|lightness:-25|saturation:-100%>
+        <%#&style=feature:water|element:geometry|hue:0xffff00|lightness:-25|saturation:-97" />%>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="ticket-bar">
+    <div class="site-width">
+      <span class="ticket-bar__copy">The Epic FEL speakers will be chosen by you</span>
+      <%= link_to "Vote now", proposals_path, class:"ticket-bar__link" %>
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhhjTE65ahW7QWDK-cqSbG8Yd7AQ9k7R8&sensor=false"></script>
+<script type="text/javascript">
+  google.maps.event.addDomListener(window, 'load', init);
+  function init() {
+    var latlng = new google.maps.LatLng(51.529258,-0.106338);
+    var mapOptions = {
+      zoom: 15,
+      center: latlng,
+      styles: [{featureType:"landscape",stylers:[{saturation:-100},{lightness:65},{visibility:"on"}]},{featureType:"poi",stylers:[{saturation:-100},{lightness:51},{visibility:"simplified"}]},{featureType:"road.highway",stylers:[{saturation:-100},{visibility:"simplified"}]},{featureType:"road.arterial",stylers:[{saturation:-100},{lightness:30},{visibility:"on"}]},{featureType:"road.local",stylers:[{saturation:-100},{lightness:40},{visibility:"on"}]},{featureType:"transit",stylers:[{saturation:-100},{visibility:"simplified"}]},{featureType:"administrative.province",stylers:[{visibility:"off"}]/**/},{featureType:"administrative.locality",stylers:[{visibility:"off"}]},{featureType:"administrative.neighborhood",stylers:[{visibility:"on"}]/**/},{featureType:"water",elementType:"labels",stylers:[{visibility:"on"},{lightness:-25},{saturation:-100}]},{featureType:"water",elementType:"geometry",stylers:[{hue:"#ffff00"},{lightness:-25},{saturation:-97}]}]
+    };
+    var mapElement = document.getElementById('map');
+    var map = new google.maps.Map(mapElement, mapOptions);
+    //map.setOptions({draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true, disableDefaultUI: true});
+    var marker = new google.maps.Marker({
+      position: latlng,
+      map: map,
+      color: 'blue',
+      title: 'Sadler\'s Wells Theatre'
+    });
+  }
+</script>

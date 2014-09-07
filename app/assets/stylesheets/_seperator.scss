@@ -1,0 +1,6 @@
+.seperator {
+  @include size(em(120pt) em(3pt));
+  border:none;
+  background-color:#6856b5;
+  display:inline-block;
+}

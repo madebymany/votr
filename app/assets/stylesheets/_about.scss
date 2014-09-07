@@ -1,0 +1,13 @@
+.about {
+  @extend %media-box;
+  @extend %section;
+}
+
+.about__aside-left {
+  @extend %media-box__aside-left;
+  @extend %section__aside-left;
+}
+
+.about__content {
+  @extend %media-box__content;
+}

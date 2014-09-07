@@ -20,6 +20,6 @@ Votr::Application.routes.draw do
     end
   end
 
-  root to: redirect("/proposals")
+  root to: "pages#index"
 
 end

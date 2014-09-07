@@ -1,11 +1,14 @@
-<header class="site-header">
-  <div class="container">
-
-    <a href="/" class="site-logo" id="fel">
-      <span class="inner" title="Front-end London">
-        F<span id="front">ront-</span>E<span id="end">nd </span>L<span id="london">ondon</span>
-      </span>
-    </a>
-
+<header class="<%="site-header site-header--voting #{"site-header--empty" unless content_for?(:header)}" %>">
+  <div class="site-width">
+    <h1 class="epic-logo">
+      <%= link_to "EPIC<br />FEL".html_safe, root_url, class:"epic-logo__link" %>
+    </h1>
+    <a href="http://madebymany.co.uk"><img src="" /></a>
+    <%= yield :header %>
+    <% if false# current_user %>
+      <p class="body-copy">
+        <%= link_to "Your votes", votes_proposals_path %>
+      </p>
+    <% end %>
   </div>
 </header>

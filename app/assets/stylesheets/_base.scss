@@ -1,0 +1,64 @@
+* {
+  @include box-sizing(border-box);
+}
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:'proximanovareg', sans-serif;
+}
+
+
+p {
+  line-height: 1.4;
+}
+
+/* HTML5 display definitions
+========================================================================== */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button {
+  cursor:pointer;
+  outline:none;
+  background-color:transparent;
+  border:none;
+  padding:0;
+}
+
+img {
+  border: none;
+}
+
+a {
+  color:#8e75ef;
+}

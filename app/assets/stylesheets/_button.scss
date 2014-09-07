@@ -1,0 +1,19 @@
+.button {
+  @extend %unstyled-anchor;
+  background:#6852b7;
+  color:#fff;
+  font-family:'nanamimedium', sans-serif;
+  font-size:em(24pt);
+  line-height:em(64pt, 24pt);
+  padding:0 em(20pt, 24pt);
+  text-transform:uppercase;
+  display:inline-block;
+  vertical-align:middle;
+  border:0;
+  margin:0 0 em(17pt, 24pt);
+  cursor:pointer;
+
+  @media screen and (max-width: 750px) {
+    font-size:em(20px);
+  }
+}

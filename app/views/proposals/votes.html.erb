@@ -1,7 +1,7 @@
-<div class="padded">
-  <h1>Your votes</h1>
+<div class="site-width">
+  <h1 class="page-title">Your votes</h1>
 </div>
 
 <% @votes.each do |vote| %>
-  <%= render vote.proposal %>
+  <%= render vote.proposal, full: false %>
 <% end %>

@@ -1,0 +1,64 @@
+.site-header {
+  background:url(image_path("epic-mark-purple.jpg")) no-repeat center #997ef3;
+  background-size:cover;
+  overflow:hidden;
+  color:#fff;
+  border-bottom:3px solid #6856b5;
+}
+
+.site-header--empty {
+  padding-bottom:em(64px, 32pt);
+}
+
+.epic-logo {
+  font-family:'nanamimedium', sans-serif;
+  display:inline-block;
+  margin:em(48px, 98pt) 0 em(30px, 98pt);
+  letter-spacing:-0.03em;
+  padding:em(16px, 98pt) em(65px, 98pt) em(75px, 98pt) em(5px, 98pt);
+  background:#fff;
+  color:#8f78e7;
+  font-size:em(98pt);
+  font-weight:400;
+  line-height:0.88;
+
+  @media screen and (max-width: 750px) {
+    font-size:em(66pt);
+  }
+
+  .site-header--voting & {
+    font-size:em(66pt);
+  }
+}
+
+.epic-logo__link {
+  @extend %unstyled-anchor;
+}
+
+.site-header__subtitle {
+  font-size:em(32pt);
+  font-weight:400;
+  line-height:1.4em;
+  max-width:790px;
+  margin-bottom:em(49px, 32pt);
+
+  @media screen and (max-width: 750px) {
+    font-size:em(24pt);
+    max-width:580px;
+  }
+}
+
+.site-header__fel-link {
+  @extend %unstyled-anchor;
+  color:#d1c7f5;
+
+  &:hover,
+  &:focus {
+    text-decoration:underline;
+  }
+}
+
+.site-header_details {
+  @extend %secondary-heading;
+  margin:em(37px, 32pt) 0 em(64px, 32pt);
+}

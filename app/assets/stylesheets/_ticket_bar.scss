@@ -1,0 +1,35 @@
+.ticket-bar {
+  background:#6852b7;
+  padding:1em 0;
+  position:fixed;
+  bottom:0;
+  width:100%;
+  @media screen and (max-width: 600px) {
+    text-align:center;
+  }
+}
+
+.ticket-bar__link {
+  @extend .button;
+  background:#fff;
+  color:#6852b7;
+  float:right;
+  padding:0 em(43pt, 24pt);
+  margin-bottom:0;
+  @media screen and (max-width: 600px) {
+    float:none;
+  }
+}
+
+.ticket-bar__copy {
+  @extend .body-copy;
+  color:#fff;
+  display:inline-block;
+  margin:0 5px 0 0;
+  line-height:em(64pt, 21pt);
+  float:left;
+
+  @media screen and (max-width: 600px) {
+    display:none;
+  }
+}

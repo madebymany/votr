@@ -1,14 +1,18 @@
-<%
-classes = []
-classes << "proposal"
-classes << "proposal--voted" if current_user && current_user.voted?(proposal)
-classes << "proposal--closed" if proposal.closed?
-%>
-
-<div class="<%= classes.join(' ') %>">
-  <h2 class="proposal__title"><%= link_to(proposal.title, proposal) %></h2>
-
-  <% if voting_closed? %>
-    <span class="proposal__votes"><%= proposal.author %></span>
-  <% end %>
-</div>
+<section class="site-width">
+  <div class="proposal">
+    <div class="proposal__content">
+      <header class="proposal__header">
+        <h2 class="proposal__title"><%= link_to(proposal.title, proposal) %></h2>
+        <% if voting_closed? %>
+          <cite class="proposal__author"><%= proposal.author %></cite>
+        <% end %>
+      </header>
+      <%= simple_format(full ? proposal.body : truncate(proposal.body, length: 400), class: "body-copy") %>
+      <% if full %>
+        <%= render "votes/form", proposal: proposal, vote: @vote %>
+      <% else %>
+        <p class="body-copy"><%= link_to("Read more #{"and vote for this proposal" unless current_user && current_user.voted?(proposal)}", proposal) %></p>
+      <% end %>
+    </div>
+  </div>
+</section>

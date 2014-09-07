@@ -27,6 +27,9 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.13)
+    bourbon (3.2.3)
+      sass (~> 3.2)
+      thor
     builder (3.1.4)
     daemons (1.1.9)
     erubis (2.7.0)
@@ -125,6 +128,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bourbon
   inherited_resources
   jbuilder (~> 1.2)
   jquery-rails

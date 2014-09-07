@@ -9,6 +9,7 @@ gem 'pg'
 gem 'thin'
 gem 'omniauth-twitter'
 gem 'inherited_resources'
+gem 'bourbon'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

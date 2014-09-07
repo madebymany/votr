@@ -1,0 +1,29 @@
+.location {
+  @extend %section;
+  border-bottom:0;
+  padding-bottom:146px;
+}
+
+.location__container {
+  @extend %media-box;
+}
+
+.location__aside-left {
+  @extend %media-box__aside-left;
+  @extend %section__aside-left;
+}
+
+.location__content {
+  @extend %media-box__content;
+}
+
+.location__map-container {
+  clear:both;
+  margin-top:em(47px);
+  width:100%;
+  @include fluid-media-wrapper(16 9);
+}
+
+.location__map {
+  @extend %fluid-media-wrapper__media;
+}
