@@ -1,14 +1,14 @@
 <header class="<%="site-header site-header--voting #{"site-header--empty" unless content_for?(:header)}" %>">
   <div class="site-width">
-    <h1 class="epic-logo">
-      <%= link_to "EPIC<br />FEL".html_safe, root_url, class:"epic-logo__link" %>
-    </h1>
-    <a href="http://madebymany.co.uk"><img src="" /></a>
-    <%= yield :header %>
-    <% if false# current_user %>
-      <p class="body-copy">
-        <%= link_to "Your votes", votes_proposals_path %>
-      </p>
-    <% end %>
+    <div class="site-header__content">
+      <h1 class="epic-logo">
+        <%= link_to "EPIC<br />FEL".html_safe, root_url, class:"epic-logo__link" %>
+      </h1>
+      <a href="http://madebymany.co.uk"><img src="" /></a>
+      <%= yield :header %>
+      <% if current_user %>
+        <%= link_to "Your votes", votes_proposals_path, class:"your-votes" %>
+      <% end %>
+    </div>
   </div>
 </header>
