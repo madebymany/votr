@@ -1,16 +1,16 @@
 <% content_for :header do %>
   <h2 class="site-header__subtitle">
-    It's up to you to vote for the talks that you want to hear at Epic FEL. Cast your votes for the eight proposals below that you'd most like to see.</p>
+    It's up to you to vote for the talks that you want to hear at EpicFEL. Cast your votes for the eight proposals below that you'd most like to see.</p>
   </h2>
   <% if !voting_open? %>
     <p><strong>Voting will open on the 28th August</strong>.</p>
-    <p>If you'd like to propose a talk, please <%= mail_to "frontendlondon@madebymany.co.uk", "get in touch with us", class: "red" %>.</p>
+    <p>If you'd like to propose a talk, please <%= mail_to "fel@madebymany.co.uk", "get in touch with us", class: "red" %>.</p>
 
   <% elsif voting_open? && !voting_closed? %>
     <p class="site-header_details">Voting closes on the 13th of September</p>
   <% else %>
     <p class="site-header_details">Voting is closed.<p>
-    <p class="site-header__subtitle">The following proposals were selected for Epic FEL</p>
+    <p class="site-header__subtitle">The following proposals were selected for EpicFEL</p>
   <% end %>
 <% end %>
 <%= render @proposals, full: false %>
