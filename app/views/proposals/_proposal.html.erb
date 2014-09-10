@@ -1,6 +1,9 @@
 <section class="site-width">
   <div class="proposal">
     <div class="proposal__content">
+      <% if full %>
+        <p><a href="/proposals">All proposals</a></p>
+      <% end %>
       <header class="proposal__header">
         <h2 class="proposal__title"><%= link_to(proposal.title, proposal) %></h2>
         <% if voting_closed? %>
@@ -10,6 +13,7 @@
       <%= simple_format(full ? proposal.body : truncate(proposal.body, length: 400), class: "body-copy") %>
       <% if full %>
         <%= render "votes/form", proposal: proposal, vote: @vote %>
+        <p><a href="/proposals">All proposals</a></p>
       <% else %>
         <p class="body-copy"><%= link_to("Read more #{"and vote for this proposal" unless current_user && current_user.voted?(proposal)}", proposal) %></p>
       <% end %>
