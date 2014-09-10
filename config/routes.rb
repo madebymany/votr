@@ -1,7 +1,7 @@
 Votr::Application.routes.draw do
 
   constraints(:host => /(www.)?fel-one-day-votr.herokuapp.com/) do
-    match "/(*path)" => redirect {|params, req| "http://epic.frontendlondon.co.uk/#{params[:path]}"},  via: [:get, :post]#, status: 301
+    match "/(*path)" => redirect {|params, req| "http://epic.frontendlondon.co.uk/#{params[:path]}"},  via: [:get, :post]
   end
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:post, :get]
