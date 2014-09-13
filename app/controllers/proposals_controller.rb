@@ -26,13 +26,4 @@ private
     @proposal = Proposal.recent.find(params[:id]) or not_found
   end
 
-  def fetch_proposals
-    @proposals =
-      if voting_closed?
-        Proposal.top_with_vote_count
-      else
-        Proposal.recent.order('RANDOM()')
-      end
-  end
-
 end

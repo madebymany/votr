@@ -1,5 +1,6 @@
 <section class="site-width">
   <div class="proposal">
+    <%= image_tag("speakers/#{proposal.image}", class: "proposal__aside-left") if proposal.image.present? %>
     <div class="proposal__content">
       <header class="proposal__header">
         <h2 class="proposal__title"><%= link_to(proposal.title, proposal) %></h2>

@@ -43,7 +43,7 @@ private
   end
 
   def params_for_create
-    params.require(:proposal).permit(:title, :author, :body)
+    params.require(:proposal).permit(:title, :author, :body, :image)
   end
 
 end

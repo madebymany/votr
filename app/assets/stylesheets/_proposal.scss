@@ -6,6 +6,8 @@
 .proposal__aside-left {
   @extend %media-box__aside-left;
   @extend %section__aside-left;
+  margin-right:em(27px);
+  max-width:260px;
 }
 
 .proposal__content {

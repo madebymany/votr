@@ -31,6 +31,17 @@ class ApplicationController < ActionController::Base
   helper_method :voting_open?
   helper_method :voting_closed?
 
+protected
+
+  def fetch_proposals
+    @proposals =
+      if voting_closed?
+        Proposal.top_with_vote_count
+      else
+        Proposal.recent.order('RANDOM()')
+      end
+  end
+
 private
 
   def store_previous_url!
