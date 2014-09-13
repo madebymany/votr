@@ -35,6 +35,10 @@
   @extend %unstyled-anchor;
 }
 
+.site-header__content {
+  position:relative;
+}
+
 .site-header__subtitle {
   font-size:em(32pt);
   font-weight:400;

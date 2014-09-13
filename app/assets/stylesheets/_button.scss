@@ -1,7 +1,8 @@
 .button {
   @extend %unstyled-anchor;
-  background:#6852b7;
-  color:#fff;
+  border: 2px solid #6852B7;
+  color: #6852B7;
+  background:none;
   font-family:'nanamimedium', sans-serif;
   font-size:em(24pt);
   line-height:em(64pt, 24pt);
@@ -9,7 +10,6 @@
   text-transform:uppercase;
   display:inline-block;
   vertical-align:middle;
-  border:0;
   margin:0 0 em(17pt, 24pt);
   cursor:pointer;
 

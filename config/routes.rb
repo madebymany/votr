@@ -1,5 +1,9 @@
 Votr::Application.routes.draw do
 
+  constraints(:host => /(www.)?fel-one-day-votr.herokuapp.com/) do
+    match "/(*path)" => redirect {|params, req| "http://epic.frontendlondon.co.uk/#{params[:path]}"},  via: [:get, :post]
+  end
+
   match 'auth/:provider/callback', to: 'sessions#create', via: [:post, :get]
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'

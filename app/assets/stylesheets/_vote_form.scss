@@ -1,3 +1,18 @@
 .vote-form {
   margin-top:47px;
 }
+
+.your-votes {
+  @extend .button;
+  border-color:#fff;
+  color:#fff;
+  font-size:em(21px);
+  position:absolute;
+  top:32px;
+  right:0;
+  
+  @media screen and (max-width: 430px) {
+    position:static;
+    margin:-.5em 0 2em;
+  }
+}

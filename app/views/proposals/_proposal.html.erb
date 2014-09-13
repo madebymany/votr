@@ -2,6 +2,9 @@
   <div class="proposal">
     <%= image_tag("speakers/#{proposal.image}", class: "proposal__aside-left") if proposal.image.present? %>
     <div class="proposal__content">
+      <% if false %>
+        <p><a href="/proposals">All proposals</a></p>
+      <% end %>
       <header class="proposal__header">
         <h2 class="proposal__title"><%= link_to(proposal.title, proposal) %></h2>
         <% if voting_closed? %>
@@ -9,10 +12,12 @@
         <% end %>
       </header>
       <%= simple_format(full ? proposal.body : truncate(proposal.body, length: 400), class: "body-copy") %>
-      <% if full %>
+      <% if full && !voting_closed? %>
         <%= render "votes/form", proposal: proposal, vote: @vote %>
-      <% else %>
-        <p class="body-copy"><%= link_to("Read more #{"and vote for this proposal" unless current_user && current_user.voted?(proposal)}", proposal) %></p>
+        <p><a href="/proposals">All proposals</a></p>
+      <% end %>
+      <% if !full %>
+        <p class="body-copy"><%= link_to("Read more #{"and vote for this proposal" unless (current_user && current_user.voted?(proposal) || voting_closed?)}", proposal) %></p>
       <% end %>
     </div>
   </div>
