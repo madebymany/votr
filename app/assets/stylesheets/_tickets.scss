@@ -1,0 +1,100 @@
+.tickets {
+  @extend %media-box;
+  @extend %section;
+}
+
+.tickets__aside-left {
+  @extend %media-box__aside-left;
+  @extend %section__aside-left;
+}
+
+.tickets__content {
+  @extend %media-box__content;
+}
+
+.tito-ticket-list {
+  @extend %unstyled-list; 
+  display:table;
+  width:100%;
+}
+
+.tito-ticket {
+  display:table-row;
+}
+
+.tito-ticket-name-wrapper,
+.tito-ticket-price-quantity-wrapper,
+.tito-ticket-status-sold-out {
+  border-bottom: 2px solid #6856b5;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.tito-ticket-price-quantity-wrapper,
+.tito-ticket-status-sold-out {
+  text-align:right;
+}
+
+.tito-ticket-price, 
+.tito-ticket-name {
+  @extend .body-copy;
+  display:inline-block;
+  margin:0.95238em 0;
+}
+
+.tito-ticket-status-sold-out span {
+  @extend .button;
+  opacity:.5;
+  background: repeating-linear-gradient(45deg, rgba(104, 82, 183, 0.3), rgba(104, 82, 183, 0.4) 10px, #fff 10px, #fff 20px);
+  font-size:1.2em;
+  line-height:2.2em;
+  cursor: default;
+}
+
+.tito-ticket-price, 
+.tito-ticket-quantity {
+  display: inline-block;
+}
+
+.tito-submit {
+  @extend .button;
+  float:right;
+  margin:1em 0 0;
+}
+
+.tito-badge-link {
+  margin:1.5em 0 0;
+  display:inline-block;
+}
+
+.tito-notch {
+  @extend %visually-hidden;
+}
+
+.tito-ticket-quantity-field {
+  font-family: 'proximanovareg', sans-serif;
+  font-size: 1.3125em;
+  max-width: 2.2em;
+  padding:0 .4em;
+  line-height:1.9em;
+  border:2px solid #6852B7;
+  color:#6852B7;
+}
+
+#tito-previous-releases .tito-ticket-name {
+  margin:0.47619em 0 0.95238em;
+}
+
+
+::-webkit-input-placeholder { /* WebKit browsers */
+   color: rgba(104, 82, 183, 0.4);  
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: rgba(104, 82, 183, 0.4);  
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: rgba(104, 82, 183, 0.4);  
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color: rgba(104, 82, 183, 0.4);  
+}
