@@ -81,8 +81,12 @@
   color:#6852B7;
 }
 
-#tito-previous-releases .tito-ticket-name {
-  margin:0.47619em 0 0.95238em;
+#tito-previous-releases .tito-ticket:first-child .tito-ticket-name {
+  margin:0.4em 0 0.95238em;
+}
+
+#tito-previous-releases .tito-ticket:last-child .tito-ticket-status-sold-out span {
+  margin:0.70833em 0;
 }
 
 
