@@ -24,6 +24,7 @@ Votr::Application.routes.draw do
     end
   end
 
+  get 'code_of_conduct', to: 'pages#conduct', as: 'code_of_conduct'
   root to: "pages#index"
 
 end

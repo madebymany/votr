@@ -1,0 +1,18 @@
+.conduct {
+  @extend %media-box;
+  @extend %section;
+  border-bottom:none;
+}
+
+.conduct__aside-left {
+  @extend %media-box__aside-left;
+  @extend %section__aside-left;
+}
+
+.conduct__content {
+  @extend %media-box__content;
+
+  & .body-copy:first-child {
+    margin-top:0;
+  }
+}

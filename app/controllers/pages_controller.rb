@@ -5,4 +5,7 @@ class PagesController < ApplicationController
   def index
   end
 
+  def conduct
+  end
+
 end
