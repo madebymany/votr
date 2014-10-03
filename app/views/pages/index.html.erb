@@ -6,7 +6,7 @@
     </a>
   </h2>
   <hr class="seperator" />
-  <p class="site-header_details">October 4th 2014 // Sadler’s Wells, Islington, London</p>
+  <p class="site-header_details">October 4, 2014 // Sadler’s Wells, Islington, London</p>
 <% end %>
 
 <section class="site-width">
@@ -17,9 +17,13 @@
     </div>
     <div class="about__content">
       <p class="body-copy">EpicFEL (formerly FEL One Day) is a the larger, day-long version of the free monthly meet-up hosted by Made by Many. Get ready for a full day of cutting-edge, insightful talks about all aspects of front-end design and development.</p>
-      <p class="body-copy">We’re inviting the front-end community to join us at the Lilian Baylis Studio at Sadler's Well Theatre on Saturday the 4th of October from 9:30am.</p>
+      <p class="body-copy">We’re inviting the front-end community to join us at the Lilian Baylis Studio at Sadler’s Well Theatre on Saturday the 4th of October from 9:00am.</p>
       <p class="body-copy">EpicFEL is an affordable community focused event featuring speakers chosen by you.</p>
       <p class="body-copy">We expect all conference participants to abide by our <%= link_to "code of conduct", code_of_conduct_path %>.</p>
+
+        <p class="body-copy" style="margin-top: 3em; text-align: center;">Sponsored by<br>
+          <%= image_tag "sponsor-twilio.png", alt: "Twilio" %>
+        </p>
     </div>
   </div>
 </section>
@@ -35,10 +39,13 @@
     </div>
   </div>
 </section>
+
 <section>
   <div class="chosen-proposals">
     <h2 class="section-heading">Speakers</h2>
     <hr class="seperator" />
+    <p class="body-copy">Registration is 9–9:40am. Coffee, tea and pastries will be served.</p>
+    <p class="body-copy">The <a href="http://lanyrd.com/2014/epicfel/" target="_blank">full schedule</a> is available on Lanyrd.</p>
   </div>
   <%= render @proposals, full: false %>
 </section>
@@ -63,7 +70,7 @@
   </div>
 </section>
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhhjTE65ahW7QWDK-cqSbG8Yd7AQ9k7R8&sensor=false"></script>
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyDhhjTE65ahW7QWDK-cqSbG8Yd7AQ9k7R8&sensor=false"></script>
 <script type="text/javascript">
   google.maps.event.addDomListener(window, 'load', init);
   function init() {
@@ -80,7 +87,7 @@
       position: latlng,
       map: map,
       color: 'blue',
-      title: 'Sadler\'s Wells Theatre'
+      title: 'Sadler’s Wells Theatre'
     });
   }
 </script>
